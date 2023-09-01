@@ -20,16 +20,6 @@
 };
 
 / {
-    conditional_layers {
-        compatible = "zmk,conditional-layers";
-        tri_layer {
-            if-layers = <LOWER RAISE>;
-            then-layer = <ADJUST>;
-        };
-    };
-};
-
-/ {
 
   combos {
     #include "combos.dtsi"
@@ -79,121 +69,46 @@
 
     default_layer {
       label = "BASE";
-// -----------------------------------------------------------------------------------------
-// |  TAB  |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  |  Å   |
-// |CTRLESC|  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  Ö  |  Ä   |
-// | SHFT  |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  -  | ESC  |
-//                     | GUI | LWR | TAB |   | SPC |RS-ENT| MEH |
-                        bindings = <
-   TABFNC    &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I       &kp O       &kp P       &kp SE_ARNG
-   C_ESC     &kp A &kp S &kp D &kp F &kp G   &kp H &kp J  &kp K       &kp L       &kp SE_ODIA &kp SE_ADIA
-   TABNUM    &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp SE_COMM &kp SE_DOT  &kp SE_MINS &kp ESC
-                   &kp LGUI  BS_LOW TABNAV   ENT_RS &kp SPACE &kp MEH
-                        >;
-    };
-
-    game_layer {
-      label = "GAME";
-// -----------------------------------------------------------------------------------------
-// |  TAB  |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  |  Å   |
-// | CTRL  |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  Ö  |  Ä   |
-// | SHFT  |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  -  | ESC  |
-//                     | GUI | LWR | TAB |   | SPC |RS-ENT| ALT |
-    bindings = <
-   &kp TAB   &kp Q &kp W   &kp E        &kp R &kp T   &kp Y  &kp U  &kp I       &kp O       &kp P       &kp SE_ARNG
-   &kp LCTRL &kp A &kp S   &kp D        &kp F &kp G   &kp H  &kp J  &kp K       &kp L       &kp SE_ODIA &kp SE_ADIA
-   &kp LSHFT &kp Z &kp X   &kp C        &kp V &kp B   &kp N  &kp M  &kp SE_COMM &kp SE_DOT  &kp SE_MINS &kp ESC
-                   &kp ESC &kp LALT SPC_GL        SPCNAV ENT_RS &to BASE
-      >;
-    };
-
-    lower_layer {
-      label = "LOWER";
-// -----------------------------------------------------------------------------------------
-// |   @  |  !  |  "  |  #  |  $  |  %  |   |  &  |  /  |  (  |  )  |  =  |   \  |
-// |   @  |  !  |  "  |  #  |  $  |  %  |   |  @  |  ?  |  [  |  ]  |  $  |   *  |
-// | SHFT |     |  £  |  £  |  @  |  ¤  |   |     |  *  |  {  |  }  |     |      |
-//                    |     |     |     |   |CPSWD|     |     |
-    bindings = <
-   &kp SE_AT  &kp SE_EXLM  &kp SE_DQUO  &kp SE_HASH  &kp SE_DLR  &kp SE_PERC    &kp SE_AMPR  &kp SE_SLSH  &kp SE_LPRN  &kp SE_RPRN  &kp SE_EQL  &kp SE_BSLS
-   &kp SE_AT  &kp SE_EXLM  &kp SE_DQUO  &kp SE_HASH  &kp SE_DLR  &kp SE_PERC    &kp SE_AT    &kp SE_QUES  &kp SE_LBRC  &kp SE_RBRC  &kp SE_DLR  &kp SE_ASTR
-   &kp LSHFT  &none        &kp SE_PND   &kp SE_EURO  &kp SE_AT   &kp SE_CURR    &none        &kp SE_ASTR  &kp SE_LCBR  &kp SE_RCBR  &none       &none
-                           &none        &trans       &none       &trans         &trans       &none
-      >;
-    };
-
-    raise_layer {
-      label = "RAISE";
-// -----------------------------------------------------------------------------------------
-// |   ^   |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  |  DEL |
-// |  DEL  |  |  |  ~  |  <  |  >  |     |   |  '  |  +  |  `  |  å  |     |      |
-// | SHFT  |     |     |     |  |  |     |   |     |  *  |  {  |  }  |     |      |
-//                     | GUI |     | SPC |   |     |     | ALT |
-                        bindings = <
-  &kp SE_CIRC  &kp N1       &kp N2       &kp N3       &kp N4       &kp N5       &kp N6       &kp N7       &kp N8       &kp N9       &kp N0  &kp DEL
-  &kp DEL      &kp SE_PIPE  &kp SE_TILD  &kp SE_LABK  &kp SE_RABK  &none        &kp SE_QUOT  &kp SE_PLUS  &kp SE_GRV   &kp SE_ARNG  &none   &none
-  &kp LSHFT    &none        &none        &none        &kp SE_PIPE  &none        &none        &kp SE_ASTR  &kp SE_LCBR  &kp SE_RCBR  &none   &none
-                                         &kp LGUI     &trans       &kp SPACE    &none        &trans       &kp RALT
-      >;
-    };
-
-    game_low_layer {
-      label = "GLow";
-// -----------------------------------------------------------------------------------------
-// |      |  8  |  7  |  6  |  5  |     |   |     |     |     |     |     |      |
-// |      |  4  |  3  |  2  |  1  |     |   |     |     |     |     |     |      |
-// |      |     |     |     |     | DEL |   |     |     |     |     |     |      |
-//                    |     |     |     |   |     |     |     |
-                        bindings = <
-   &trans  &kp N8  &kp N7  &kp N6  &kp N5  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-   &trans  &kp N4  &kp N3  &kp N2  &kp N1  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-   &trans  &trans  &trans  &trans  &trans  &kp DEL   &trans  &trans  &trans  &trans  &trans  &trans
-                           &trans  &trans  &none     &trans  &trans  &trans
+      bindings = <
+      //╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
+          &kp TAB       &kp Q         &kp W         &kp E         &kp R         &kp T             &kp Y         &kp U         &kp I         &kp O         &kp P         &kp SE_ARNG
+      //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼   ┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
+          C_ESC         &kp A         &kp S         &kp D         &kp F         &kp G             &kp H         &kp J         &kp K         &kp L         &kp SE_ODIA   &kp SE_ADIA
+      //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼   ┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
+          TABNUM        &kp Z         &kp X         &kp C         &kp V         &kp B             &kp N         &kp M         &kp SE_COMM   &kp SE_DOT    &kp SE_MINS   &kp ESC
+      //╰─────────────┴─────────────┴─────────────┴─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┴─────────────┴─────────────┴─────────────╯
+                                                    &kp LGUI      BS_NAV        &skq LSHIFT       &kp SPACE     ENTNUM        &kp MEH
+      //                                          ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
       >;
     };
 
     nav_layer {
       label = "NAV";
-// -----------------------------------------------------------------------------------------
-// |       |     | Gui |  Alt|     | PgUp|   | Yank|CPgUp|     |CPgDn|Paste|      |
-// | Bspc  | Home| End | Ctrl|Shift| PgDn|   |   ← |   ↓ |   ↑ |   → | Del |      |
-// |       |     |     |Comnt| Dupl|     |   |     | Yank|Paste|     |     |      |
-//                     |     |     |     |   |     |     |     |
-                        bindings = <
-   &none    &none    &kp LGUI &kp LALT  &none     &kp PG_UP    YANK     C_PGUP    &none   C_PGDN     PASTE   &none
-   &kp BSPC &kp HOME &kp END  &kp LCTRL &kp LSHFT &kp PG_DN    &kp LEFT &kp DOWN  &kp UP  &kp RIGHT  &kp DEL &none
-   &none    &none    &none    COMNT     DUPLIC    &none        &none    YANK      PASTE   &none      &none   &kp PSCRN
-                              &none     &none     &none        &none    &none     &none
+      bindings = <
+        // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
+             &to ADJUST    XXX           &key_repeat   SK(LCTRL)     SK(MEH)       XXX               XXX           &kp LS(TAB)   &kp TAB       &kp ESC       XXX           XXX
+        // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
+             XXX           XXX           SK(LSHIFT)    SK(LALT)      SK(LGUI)      XXX               XXX           &kp BSPC      &kp UP        &kp ENTER     &kp DEL       XXX
+        // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
+             XXX           XXX           XXX           XXX           XXX           XXX               XXX           &kp LEFT      &kp DOWN      &kp RIGHT     XXX           XXX
+        // ╰─────────────┴─────────────┴─────────────┴─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┴─────────────┴─────────────┴─────────────╯
+                                                       ___           ___           ___               ___           ___           ___
+        //                                           ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
       >;
     };
 
-    number_layer {
-      label = "NUMBER";
-// -----------------------------------------------------------------------------------------
-// |  TAB |     |CPgUp|     |CPgDn|     |   |  /  |  7  |  8  |  9  |  *  | Bksp |
-// |      |     |  Cut| Yank|Paste|CapsW|   | Bksp|  4  |  5  |  6  |  -  |      |
-// | SHFT |     |     |     |     |     |   |     |  1  |  2  |  3  |  +  |      |
-//                    |     |     |     |   | TAB |  0  | ENT |
-                        bindings = <
-   &kp TAB    &none   C_PGUP  &none   C_PGDN  &none         &kp KP_DIVIDE &kp N7  &kp N8  &kp N9 &kp KP_MULTIPLY  &kp BSPC
-   &none      &none   KUT     YANK    PASTE   &caps_word    &kp BSPC      &kp N4  &kp N5  &kp N6 &kp KP_MINUS     &none
-   &none      &none   &none   &none   &none   &none         &none         &kp N1  &kp N2  &kp N3 &kp KP_PLUS      &caps_word
-                              &none   &none   &none         &kp TAB       &kp N0  &kp ENTER
-      >;
-    };
-
-    function_layer {
-      label = "FUNCTION";
-// -----------------------------------------------------------------------------------------
-// |      |     |     |     |     |     |   | F10 |  F7 |  F8 |  F9 |     |       |
-// |      | LGUI| LALT|LCTRL|LSHFT|     |   | F11 |  F4 |  F5 |  F6 |     |       |
-// |      |     |     |     |     |     |   | F12 |  F1 |  F2 |  F3 |     |       |
-//                    |     |     |     |   |     |     |     |
-                        bindings = <
-   &none  &none     &none     &none      &none      &none    &kp F10  &kp F7  &kp F8  &kp F9  &none  &none
-   &none  &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &none    &kp F11  &kp F4  &kp F5  &kp F6  &none  &none
-   &none  &none     &none     &none      &none      &none    &kp F12  &kp F1  &kp F2  &kp F3  &none  &none
-                              &none      &none      &none    &none    &none   &none
+    num_layer {
+      label = "NUM";
+      bindings = <
+        // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
+             XXX           &macro_grv    &kp N7        &kp N8        &kp N9        &kp SE_EQL        XXX           SK(MEH)       SK(LCTRL)     &key_repeat   XXX           &to ADJUST
+        // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
+             XXX           &kp N0        &kp N4        &kp N5        &kp N6        &kp SE_MINS       XXX           SK(LGUI)      SK(LALT)      SK(LSHIFT)    XXX           XXX
+        // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
+             XXX           &kp SE_BSLS   &kp N1        &kp N2        &kp N3        &kp SE_SCLN       XXX           XXX           XXX           XXX           XXX           XXX
+        // ╰─────────────┴─────────────┴─────────────┴─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┴─────────────┴─────────────┴─────────────╯
+                                                       ___           ___           ___               ___           ___           ___
+        //                                           ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
       >;
     };
 
@@ -206,9 +121,9 @@
 //                    |     |     |     |   |     |     |     |
                         bindings = <
    &none      &none        &none        &none        &none        &none          &none    &none  &none  &none  &none  &none
-   &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4   &to GAME &none  &none  &none  &none  &none
+   &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4   &none    &none  &none  &none  &none  &none
    &none      &none        &none        &none        &none        &none          &none    &none  &none  &none  &none  &none
-                                        &none        &none        &none          &none    &none  &none
+                                        &to BASE     &none        &none          &none    &none  &to BASE
       >;
     };
 
