@@ -1,18 +1,13 @@
-/*
-*
-* Copyright (c) 2021 Darryl deHaan
-* SPDX-License-Identifier: MIT
-*
-*/
-
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 
 #include "keymap_swedish.h"
 #include "corneish_zen.h"
-#include "macros.dtsi"
-#include "combos.dtsi"
+
+&sk {
+  release-after-ms = <STICKY_KEY_TIMEOUT>;
+};
 
 / {
   chosen {
@@ -35,11 +30,56 @@
 };
 
 / {
+
+  combos {
+    #include "combos.dtsi"
+  };
+
+  macros {
+    #include "macros.dtsi"
+  };
+
+  behaviors {
+
+    skq: sticky_key_quick_release {
+      compatible = "zmk,behavior-sticky-key";
+      label = "STICKY_KEY_QUICK_RELEASE";
+      #binding-cells = <1>;
+      bindings = <&kp>;
+      quick-release;
+      release-after-ms = <STICKY_KEY_TIMEOUT>;
+    };
+
+    // Sticky key on tap, normal key on hold
+    // Useful for modifier-clicking without the modifier remaining active
+    nk: not_so_sticky_key {
+      compatible = "zmk,behavior-hold-tap";
+      label = "NOT_SO_STICKY_KEY";
+      #binding-cells = <2>;
+      tapping_term_ms = <200>;
+      flavor = "tap-preferred";
+      bindings = <&kp>, <&sk>;
+    };
+
+    // A hold-tap that activates without delay (like `&mo`)
+    mo_tap: mo_with_tap {
+      compatible = "zmk,behavior-hold-tap";
+      label = "MO_WITH_TAP";
+      #binding-cells = <2>;
+      tapping_term_ms = <0>;
+      retro-tap;
+      flavor = "hold-preferred";
+      bindings = <&mo>, <&kp>;
+    };
+
+  };
+
+/ {
         keymap {
                 compatible = "zmk,keymap";
 
                 default_layer {
-                        label = "QWERTY";
+                        label = "BASE";
 // -----------------------------------------------------------------------------------------
 // |  TAB  |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  |  Å   |
 // |CTRLESC|  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  Ö  |  Ä   |
@@ -47,7 +87,7 @@
 //                     | GUI | LWR | TAB |   | SPC |RS-ENT| MEH |
                         bindings = <
    TABFNC    &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I       &kp O       &kp P       &kp SE_ARNG
-   C_ESC     &kp A &dp S &kp D &kp F &kp G   &kp H &kp J  &kp K       &kp L       &kp SE_ODIA &kp SE_ADIA
+   C_ESC     &kp A &kp S &kp D &kp F &kp G   &kp H &kp J  &kp K       &kp L       &kp SE_ODIA &kp SE_ADIA
    TABNUM    &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp SE_COMM &kp SE_DOT  &kp SE_MINS &kp ESC
                    &kp LGUI  BS_LOW TABNAV   ENT_RS &kp SPACE &kp MEH
                         >;
@@ -64,7 +104,7 @@
    &kp TAB   &kp Q &kp W   &kp E        &kp R &kp T   &kp Y  &kp U  &kp I       &kp O       &kp P       &kp SE_ARNG
    &kp LCTRL &kp A &kp S   &kp D        &kp F &kp G   &kp H  &kp J  &kp K       &kp L       &kp SE_ODIA &kp SE_ADIA
    &kp LSHFT &kp Z &kp X   &kp C        &kp V &kp B   &kp N  &kp M  &kp SE_COMM &kp SE_DOT  &kp SE_MINS &kp ESC
-                   &kp ESC &kp LALT SPC_GL        SPCNAV ENT_RS &to QWERTY
+                   &kp ESC &kp LALT SPC_GL        SPCNAV ENT_RS &to BASE
                         >;
                 };
 

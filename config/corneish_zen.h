@@ -1,5 +1,8 @@
+// Keep sticky keys active for a long time so they effectively do not time out
+#define STICKY_KEY_TIMEOUT 60000
+
 // LAYERS
-#define QWERTY 0
+#define BASE 0
 #define GAME 1
 #define LOWER 2
 #define RAISE 3
@@ -10,6 +13,7 @@
 #define ADJUST 8
 
 // CUSTOM KEY CODES
+#define SK(KEY) &nk KEY KEY
 #define C_ESC  &mt LCTRL ESC
 #define BS_LOW &lt LOWER BSPC
 #define ENT_RS &lt RAISE ENTER
