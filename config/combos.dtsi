@@ -34,7 +34,7 @@ COMBO(cut, &kp LC(X), 26 28, BASE)
 COMBO(copy, &kp LC(C), 26 27, BASE)
 COMBO(paste, &kp LC(V), 26 27 28, BASE)
 COMBO(select_all, &kp LC(A), 25 28, BASE)
-//COMBO(caps_word, &caps_word, 31 32, BASE)
+//COMBO(caps_word, &caps_word, 38 39, BASE)
 
 /* System */
 //COMBO(power, &macro_power, 5 6, BASE)
