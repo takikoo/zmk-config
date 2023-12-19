@@ -10,7 +10,8 @@
 #define WM 6
 #define NUM 7
 #define FUNC 8
-#define ADJUST 9
+#define MOUSE 9
+#define ADJUST 10
 
 // CUSTOM KEY CODES
 #define XXX &none

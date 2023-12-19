@@ -15,6 +15,8 @@
 #include "homerow_mods.h"
 #include "corneish_zen.h"
 
+#include "mouse.dtsi"
+
 / {
     chosen {
         // clang-format off
@@ -39,6 +41,10 @@
     };
 };
 
+/* Global settings */
+
+#define QUICK_TAP_MS 175
+
 &sk {  // sticky-key config
     release-after-ms = <900>;  // release after 0.6s
     quick-release;             // no double capitalization when rolling keys
@@ -47,6 +53,13 @@
 &sl {  // sticky-layer config
     ignore-modifiers;          // allow chording sticky mods & layers
 };
+
+// smart-mouse, requires PR #1366
+ZMK_BEHAVIOR(smart_mouse, tri_state,
+    bindings = <&tog MOUSE>, <&none>, <&tog MOUSE>;
+    ignored-key-positions = <LT1 LT3 RT1 RT2 RT3 RM1 RM2 RM3 RH0 RH1>;
+    ignored-layers = <MOUSE>;
+)
 
 / {
     combos{
@@ -67,9 +80,9 @@
 //╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮  ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
     TABFNC        &kp Q         &kp W         &kp E         &kp R         &kp T            &kp Y         &kp U         &kp I         &kp O         &kp P         &kp SE_ARNG
 //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤  ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-    C_ESC         HRM_A          HRM_S          HRM_D          HRM_F          &kp G            &kp H         HRM_J          HRM_K          HRM_L          HRM_OE         &kp SE_ADIA
+    C_ESC         HRM_A         HRM_S         HRM_D         HRM_F         &kp G            &kp H         HRM_J         HRM_K         HRM_L         HRM_OE        &kp SE_ADIA
 //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤  ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-    SLWM          &kp Z         &kp X         &kp C         &kp V         &kp B            &kp N         &kp M         &kp SE_COMM   &kp SE_DOT    &kp SE_MINS   &kp ESC
+    SLWM          &kp Z         &kp X         &kp C         &kp V         &kp B            &kp N         &kp M         &kp SE_COMM   &kp SE_DOT    &kp SE_MINS   &smart_mouse
 //╰─────────────┴─────────────┴─────────────┴─────────────┼─────────────┼─────────────┤  ├─────────────┼─────────────┼─────────────┼─────────────┴─────────────┴─────────────╯
                                               &mo NUM       BS_LOW        TABNUM           SPCNAV        ENT_RS        &kp MEH
 //                                          ╰─────────────┴─────────────┴─────────────╯  ╰─────────────┴─────────────┴─────────────╯
@@ -218,13 +231,13 @@
             bindings = <
                 // clang-format off
 //╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮  ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-    XXX           XXX           XXX           XXX           XXX           XXX              XXX           XXX           XXX           XXX           XXX           XXX
+    XXX           XXX           XXX           XXX           XXX           XXX              XXX           U_WH_D        U_MS_U        U_WH_U        XXX           XXX
 //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤  ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-    XXX           XXX           XXX           XXX           XXX           XXX              XXX           XXX           XXX           XXX           XXX           XXX
+    XXX           XXX           XXX           XXX           XXX           XXX              XXX           U_MS_L        U_MS_D        U_MS_R        XXX           XXX
 //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤  ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
     XXX           XXX           XXX           XXX           XXX           XXX              XXX           XXX           XXX           XXX           XXX           XXX
 //╰─────────────┴─────────────┴─────────────┴─────────────┼─────────────┼─────────────┤  ├─────────────┼─────────────┼─────────────┼─────────────┴─────────────┴─────────────╯
-                                              XXX           XXX           XXX              XXX           XXX           XXX
+                                              XXX           XXX           XXX              U_BTN2        U_BTN1        XXX
 //                                          ╰─────────────┴─────────────┴─────────────╯  ╰─────────────┴─────────────┴─────────────╯
                 // clang-format on
                 >;

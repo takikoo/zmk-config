@@ -17,6 +17,9 @@ combo_##NAME { \
   layers = <LAYERS>; \
 };
 
+/* Mouse */
+COMBO(mouse, &smart_mouse, 2 4, QWERTY)
+
 /* Brackets */
 COMBO(left_parenthesis, &kp SE_LPRN, 2 3, NUM)
 COMBO(right_parenthesis, &kp SE_RPRN, 3 4, NUM)
