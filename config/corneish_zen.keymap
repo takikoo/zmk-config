@@ -11,7 +11,33 @@
 
 #include "keymap_swedish.h"
 #include "corneish_zen.h"
-#include "homerow.dtsi"
+#include "../zmk-nodefree-config/keypos_def/keypos_42keys.h"
+
+#define KEYS_L LT0 LT1 LT2 LT3 LT4 LM0 LM1 LM2 LM3 LM4 LB0 LB1 LB2 LB3 LB4  // left-hand keys
+#define KEYS_R RT0 RT1 RT2 RT3 RT4 RM0 RM1 RM2 RM3 RM4 RB0 RB1 RB2 RB3 RB4  // right-hand keys
+#define THUMBS LH2 LH1 LH0 RH0 RH1 RH2                                      // thumb keys
+
+/* left-hand HRMs */
+ZMK_BEHAVIOR(hml, hold_tap,
+    flavor = "balanced";
+    tapping-term-ms = <280>;
+    quick-tap-ms = <175>;                // repeat on tap-into-hold
+    require-prior-idle-ms = <150>;
+    bindings = <&kp>, <&kp>;
+    hold-trigger-key-positions = <KEYS_R THUMBS>;
+    hold-trigger-on-release;             // delay positional check until key-release
+)
+
+/* right-hand HRMs */
+ZMK_BEHAVIOR(hmr, hold_tap,
+    flavor = "balanced";
+    tapping-term-ms = <280>;
+    quick-tap-ms = <175>;                // repeat on tap-into-hold
+    require-prior-idle-ms = <150>;
+    bindings = <&kp>, <&kp>;
+    hold-trigger-key-positions = <KEYS_L THUMBS>;
+    hold-trigger-on-release;             // delay positional check until key-release
+)
 
 / {
     chosen {
@@ -67,9 +93,9 @@
             //                     | GUI | LWR | TAB |   | SPC |RS-ENT| MEH |
             bindings = <
                 // clang-format off
-   TABFNC    &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I       &kp O       &kp P       &kp SE_ARNG
-   C_ESC      HM_A  HM_S  HM_D  HM_F &kp G   &kp H  HM_J   HM_K        HM_L        HM_ODIA    &kp SE_ADIA
-   SLWM    &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp SE_COMM &kp SE_DOT  &kp SE_MINS &kp ESC
+   TABFNC    &kp Q &kp W &kp E &kp R &kp T   &kp Y  &kp U  &kp I       &kp O       &kp P       &kp SE_ARNG
+   C_ESC     &kp A &kp S &kp D &kp F &kp G   &kp H  &kp J  &kp K       &kp L       &kp SE_ODIA &kp SE_ADIA
+   SLWM      &kp Z &kp X &kp C &kp V &kp B   &kp N  &kp M  &kp SE_COMM &kp SE_DOT  &kp SE_MINS &kp ESC
                    &mo NUM  BS_LOW TABNUM    SPCNAV ENT_RS &kp MEH
                 // clang-format on
                 >;
