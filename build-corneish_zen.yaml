@@ -1,5 +1,3 @@
 include:
   - board: corneish_zen_v2_left
-    cmake-args: -DZMK_CONFIG="${GITHUB_WORKSPACE}/config/corneish_zen"
   - board: corneish_zen_v2_right
-    cmake-args: -DZMK_CONFIG="${GITHUB_WORKSPACE}/config/corneish_zen"

@@ -31,6 +31,7 @@ jobs:
     uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@main
     with:
       build_matrix_path: "build-totem.yaml"
+      config_path: "config/totem"
 
   build-corneish_zen:
     needs: changes
@@ -38,3 +39,4 @@ jobs:
     uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@main
     with:
       build_matrix_path: "build-corneish_zen.yaml"
+      config_path: "config/corneish_zen"
