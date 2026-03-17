@@ -31,4 +31,4 @@ jobs:
     with:
       build_matrix_path: "build-totem.yaml"
       config_path: "totem"
-      archive_name: "totem_firmware_${{ needs.vars.outputs.sha_short }}"
+      archive_name: "firmware_totem_${{ needs.vars.outputs.sha_short }}"

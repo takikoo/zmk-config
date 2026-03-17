@@ -31,4 +31,4 @@ jobs:
     with:
       build_matrix_path: "build-corneish_zen.yaml"
       config_path: "corneish_zen"
-      archive_name: "corneish_zen_firmware_${{ needs.vars.outputs.sha_short }}"
+      archive_name: "firmware_corneish_zen_${{ needs.vars.outputs.sha_short }}"
