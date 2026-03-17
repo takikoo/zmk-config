@@ -9,58 +9,62 @@
 
         keys = <
             /* Top Row - Left */
-            &key_physical_attrs 100 100 100 37 0 0 0
-            &key_physical_attrs 100 100 200 12 0 0 0
-            &key_physical_attrs 100 100 300 0 0 0 0
-            &key_physical_attrs 100 100 400 12 0 0 0
-            &key_physical_attrs 100 100 500 24 0 0 0
+            &key_physical_attrs 100 100 85 149 (-400) 0 0   /* RC(0,0) */
+            &key_physical_attrs 100 100 199 61 0 0 0        /* RC(0,1) */
+            &key_physical_attrs 100 100 316 3 0 0 0         /* RC(0,2) */
+            &key_physical_attrs 100 100 418 51 0 0 0        /* RC(0,3) */
+            &key_physical_attrs 100 100 520 66 0 0 0        /* RC(0,4) */
             
             /* Top Row - Right */
-            &key_physical_attrs 100 100 700 24 0 0 0
-            &key_physical_attrs 100 100 800 12 0 0 0
-            &key_physical_attrs 100 100 900 0 0 0 0
-            &key_physical_attrs 100 100 1000 12 0 0 0
-            &key_physical_attrs 100 100 1100 37 0 0 0
+            &key_physical_attrs 100 100 847 66 0 0 0        /* RC(0,5) */
+            &key_physical_attrs 100 100 949 51 0 0 0        /* RC(0,6) */
+            &key_physical_attrs 100 100 1051 3 0 0 0        /* RC(0,7) */
+            &key_physical_attrs 100 100 1170 61 0 0 0       /* RC(0,8) */
+            &key_physical_attrs 100 100 1285 149 400 0 0    /* RC(0,9) */
 
             /* Home Row - Left */
-            &key_physical_attrs 100 100 100 137 0 0 0
-            &key_physical_attrs 100 100 200 112 0 0 0
-            &key_physical_attrs 100 100 300 100 0 0 0
-            &key_physical_attrs 100 100 400 112 0 0 0
-            &key_physical_attrs 100 100 500 124 0 0 0
+            &key_physical_attrs 100 100 101 244 (-400) 0 0  /* RC(1,0) */
+            &key_physical_attrs 100 100 206 157 0 0 0       /* RC(1,1) */
+            &key_physical_attrs 100 100 316 99 0 0 0        /* RC(1,2) */
+            &key_physical_attrs 100 100 418 147 0 0 0       /* RC(1,3) */
+            &key_physical_attrs 100 100 520 162 0 0 0       /* RC(1,4) */
 
             /* Home Row - Right */
-            &key_physical_attrs 100 100 700 124 0 0 0
-            &key_physical_attrs 100 100 800 112 0 0 0
-            &key_physical_attrs 100 100 900 100 0 0 0
-            &key_physical_attrs 100 100 1000 112 0 0 0
-            &key_physical_attrs 100 100 1100 137 0 0 0
+            &key_physical_attrs 100 100 847 162 0 0 0       /* RC(1,5) */
+            &key_physical_attrs 100 100 949 147 0 0 0       /* RC(1,6) */
+            &key_physical_attrs 100 100 1051 99 0 0 0       /* RC(1,7) */
+            &key_physical_attrs 100 100 1163 157 0 0 0      /* RC(1,8) */
+            &key_physical_attrs 100 100 1268 244 400 0 0    /* RC(1,9) */
 
-            /* Bottom Row + Outer Pinkies - Left */
-            &key_physical_attrs 100 100 0 337 0 0 0     /* RC(3,0) Outer */
-            &key_physical_attrs 100 100 100 237 0 0 0   /* RC(2,0) */
-            &key_physical_attrs 100 100 200 212 0 0 0   /* RC(2,1) */
-            &key_physical_attrs 100 100 300 200 0 0 0   /* RC(2,2) */
-            &key_physical_attrs 100 100 400 212 0 0 0   /* RC(2,3) */
-            &key_physical_attrs 100 100 500 224 0 0 0   /* RC(2,4) */
+            /* Outer Pinky - Left */
+            &key_physical_attrs 100 100 10 314 (-1000) 0 0  /* RC(3,0) */
 
-            /* Bottom Row + Outer Pinkies - Right */
-            &key_physical_attrs 100 100 700 224 0 0 0   /* RC(2,5) */
-            &key_physical_attrs 100 100 800 212 0 0 0   /* RC(2,6) */
-            &key_physical_attrs 100 100 900 200 0 0 0   /* RC(2,7) */
-            &key_physical_attrs 100 100 1000 212 0 0 0  /* RC(2,8) */
-            &key_physical_attrs 100 100 1100 237 0 0 0  /* RC(2,9) */
-            &key_physical_attrs 100 100 1200 337 0 0 0  /* RC(3,9) Outer */
+            /* Bottom Row - Left */
+            &key_physical_attrs 100 100 118 338 (-400) 0 0  /* RC(2,0) */
+            &key_physical_attrs 100 100 213 253 0 0 0       /* RC(2,1) */
+            &key_physical_attrs 100 100 316 195 0 0 0       /* RC(2,2) */
+            &key_physical_attrs 100 100 418 244 0 0 0       /* RC(2,3) */
+            &key_physical_attrs 100 100 520 259 0 0 0       /* RC(2,4) */
+
+            /* Bottom Row - Right */
+            &key_physical_attrs 100 100 847 259 0 0 0       /* RC(2,5) */
+            &key_physical_attrs 100 100 949 244 0 0 0       /* RC(2,6) */
+            &key_physical_attrs 100 100 1051 195 0 0 0      /* RC(2,7) */
+            &key_physical_attrs 100 100 1157 253 0 0 0      /* RC(2,8) */
+            &key_physical_attrs 100 100 1251 338 400 0 0    /* RC(2,9) */
+
+            /* Outer Pinky - Right */
+            &key_physical_attrs 100 100 1360 311 1000 0 0   /* RC(3,9) */
 
             /* Thumb Cluster - Left */
-            &key_physical_attrs 100 100 350 337 (-1500) 0 0 /* RC(3,2) */
-            &key_physical_attrs 100 100 450 362 0 0 0       /* RC(3,3) */
-            &key_physical_attrs 100 100 550 387 1500 0 0    /* RC(3,4) */
+            &key_physical_attrs 100 100 389 361 0 0 0       /* RC(3,2) */
+            &key_physical_attrs 100 100 505 373 1500 0 0    /* RC(3,3) */
+            &key_physical_attrs 100 100 610 417 3000 0 0    /* RC(3,4) */
 
             /* Thumb Cluster - Right */
-            &key_physical_attrs 100 100 650 387 (-1500) 0 0 /* RC(3,5) */
-            &key_physical_attrs 100 100 750 362 0 0 0       /* RC(3,6) */
-            &key_physical_attrs 100 100 850 337 1500 0 0    /* RC(3,7) */
+            &key_physical_attrs 100 100 760 420 (-3000) 0 0 /* RC(3,5) */
+            &key_physical_attrs 100 100 864 376 (-1500) 0 0 /* RC(3,6) */
+            &key_physical_attrs 100 100 977 361 0 0 0       /* RC(3,7) */
         >;
     };
 };
