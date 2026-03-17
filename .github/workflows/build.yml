@@ -1,5 +1,40 @@
 on: [push, pull_request, workflow_dispatch]
 
 jobs:
-  build:
+  changes:
+    runs-on: ubuntu-latest
+    outputs:
+      totem: ${{ steps.filter.outputs.totem }}
+      corneish_zen: ${{ steps.filter.outputs.corneish_zen }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dorny/paths-filter@v3
+        id: filter
+        with:
+          filters: |
+            totem:
+              - 'config/totem/**'
+              - 'config/*.h'
+              - 'config/*.dtsi'
+              - 'build-totem.yaml'
+              - '.github/workflows/build.yml'
+            corneish_zen:
+              - 'config/corneish_zen/**'
+              - 'config/*.h'
+              - 'config/*.dtsi'
+              - 'build-corneish_zen.yaml'
+              - '.github/workflows/build.yml'
+
+  build-totem:
+    needs: changes
+    if: needs.changes.outputs.totem == 'true' || github.event_name == 'workflow_dispatch'
     uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@main
+    with:
+      build_matrix_path: "build-totem.yaml"
+
+  build-corneish_zen:
+    needs: changes
+    if: needs.changes.outputs.corneish_zen == 'true' || github.event_name == 'workflow_dispatch'
+    uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@main
+    with:
+      build_matrix_path: "build-corneish_zen.yaml"
