@@ -18,4 +18,3 @@ include:
     snippet: studio-rpc-usb-uart
   - board: xiao_ble//zmk
     shield: totem_right
-    snippet: studio-rpc-usb-uart
