@@ -9,9 +9,8 @@ manifest:
       remote: urob
       revision: main
       import: app/west.yml
-    - name: zmk-nodefree-config
+    - name: zmk-helpers
       remote: urob
       revision: main
-      path: corneish_zen/zmk-nodefree-config
   self:
     path: corneish_zen
