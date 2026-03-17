@@ -18,11 +18,11 @@
 
 #include "zmk-helpers/helper.h"
 #include "zmk-helpers/key-labels/totem.h"
-#include "swedish.h"
+#include "../shared/swedish.h"
 #include "totem.h"
-#include "homerow_mods-totem.h"
-#include "combos-totem.dtsi"
-#include "macros.dtsi"
+#include "homerow_mods.h"
+#include "combos.dtsi"
+#include "../shared/macros.dtsi"
 
 // tap: sticky-shift | shift + tap/ double-tap: caps-word | hold: shift
 ZMK_BEHAVIOR(smart_shft, mod_morph,
@@ -63,6 +63,7 @@ ZMK_BEHAVIOR(smart_shft, mod_morph,
 
 ZMK_CONDITIONAL_LAYER(adj_layer, LOWER RAISE, ADJUST)
 
+// clang-format off
 ZMK_LAYER(base,
 //             ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓   ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓
                 &kp Q       &kp W       &kp E       &kp R       &kp T           &kp Y       &kp U       &kp I       &kp O       &kp P
@@ -178,3 +179,4 @@ ZMK_LAYER(adj,
                                         XXX         XXX         XXX             XXX         XXX         XXX
 //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
 )
+// clang-format on
