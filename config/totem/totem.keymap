@@ -18,11 +18,11 @@
 
 #include "zmk-helpers/helper.h"
 #include "zmk-helpers/key-labels/totem.h"
-#include "swedish.h"
+#include "../swedish.h"
 #include "totem.h"
-#include "homerow_mods-totem.h"
-#include "combos-totem.dtsi"
-#include "macros.dtsi"
+#include "homerow_mods.h"
+#include "combos.dtsi"
+#include "../macros.dtsi"
 
 // tap: sticky-shift | shift + tap/ double-tap: caps-word | hold: shift
 ZMK_BEHAVIOR(smart_shft, mod_morph,
