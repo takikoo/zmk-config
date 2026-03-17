@@ -12,6 +12,5 @@ manifest:
     - name: zmk-nodefree-config
       remote: urob
       revision: main
-      path: zmk-nodefree-config
   self:
-    path: config
+    path: corneish_zen
