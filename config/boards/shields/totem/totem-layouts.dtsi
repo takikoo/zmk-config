@@ -1,0 +1,62 @@
+#include <dt-bindings/zmk/physical_layouts.h>
+
+/ {
+    totem_layout: totem_layout {
+        compatible = "zmk,physical-layout";
+        display-name = "Default Layout";
+        transform = <&default_transform>;
+        kscan = <&kscan0>;
+
+        keys = <
+            /* Top Row */
+            &key_physical_attrs { x = <100>; y = <100>; }
+            &key_physical_attrs { x = <200>; y = <50>;  }
+            &key_physical_attrs { x = <300>; y = <0>;   }
+            &key_physical_attrs { x = <400>; y = <50>;  }
+            &key_physical_attrs { x = <500>; y = <100>; }
+            
+            &key_physical_attrs { x = <800>; y = <100>; }
+            &key_physical_attrs { x = <900>; y = <50>;  }
+            &key_physical_attrs { x = <1000>; y = <0>;  }
+            &key_physical_attrs { x = <1100>; y = <50>; }
+            &key_physical_attrs { x = <1200>; y = <100>;}
+
+            /* Home Row */
+            &key_physical_attrs { x = <100>; y = <200>; }
+            &key_physical_attrs { x = <200>; y = <150>; }
+            &key_physical_attrs { x = <300>; y = <100>; }
+            &key_physical_attrs { x = <400>; y = <150>; }
+            &key_physical_attrs { x = <500>; y = <200>; }
+
+            &key_physical_attrs { x = <800>; y = <200>; }
+            &key_physical_attrs { x = <900>; y = <150>; }
+            &key_physical_attrs { x = <1000>; y = <100>;}
+            &key_physical_attrs { x = <1100>; y = <150>;}
+            &key_physical_attrs { x = <1200>; y = <200>;}
+
+            /* Bottom Row */
+            &key_physical_attrs { x = <0>;   y = <350>; }
+            &key_physical_attrs { x = <100>; y = <300>; }
+            &key_physical_attrs { x = <200>; y = <250>; }
+            &key_physical_attrs { x = <300>; y = <200>; }
+            &key_physical_attrs { x = <400>; y = <250>; }
+            &key_physical_attrs { x = <500>; y = <300>; }
+
+            &key_physical_attrs { x = <800>; y = <300>; }
+            &key_physical_attrs { x = <900>; y = <250>; }
+            &key_physical_attrs { x = <1000>; y = <200>;}
+            &key_physical_attrs { x = <1100>; y = <250>;}
+            &key_physical_attrs { x = <1200>; y = <300>;}
+            &key_physical_attrs { x = <1300>; y = <350>;}
+
+            /* Thumb Cluster */
+            &key_physical_attrs { x = <350>; y = <400>; r = <(-1500)>; }
+            &key_physical_attrs { x = <450>; y = <450>; }
+            &key_physical_attrs { x = <550>; y = <500>; r = <1500>; }
+
+            &key_physical_attrs { x = <750>; y = <500>; r = <(-1500)>; }
+            &key_physical_attrs { x = <850>; y = <450>; }
+            &key_physical_attrs { x = <950>; y = <400>; r = <1500>; }
+        >;
+    };
+};

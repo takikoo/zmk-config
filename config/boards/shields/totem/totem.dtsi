@@ -5,6 +5,7 @@
  */
 
 #include <dt-bindings/zmk/matrix_transform.h>
+#include "totem-layouts.dtsi"
 
 &uicr {
     nfct-pins-as-gpios;
@@ -17,7 +18,7 @@
 / {
     chosen {
         zmk,kscan = &kscan0;
-        zmk,matrix_transform = &default_transform;
+        zmk,physical-layout = &totem_layout;
     };
 
     default_transform: keymap_transform_0 {
