@@ -30,6 +30,7 @@ jobs:
     with:
       build_matrix_path: "build-totem.yaml"
       config_path: "totem"
+      archive_name: "totem_firmware"
 
   build-corneish_zen:
     needs: changes
@@ -38,3 +39,4 @@ jobs:
     with:
       build_matrix_path: "build-corneish_zen.yaml"
       config_path: "corneish_zen"
+      archive_name: "corneish_zen_firmware"
