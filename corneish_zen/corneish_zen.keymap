@@ -52,7 +52,7 @@ ZMK_BEHAVIOR(smart_wm, tap_dance,
     quick-tap-ms = <QUICK_TAP_MS>;
 };
 
-ZMK_CONDITIONAL_LAYER(LOWER RAISE, ADJUST)
+ZMK_CONDITIONAL_LAYER(adj_layer, LOWER RAISE, ADJUST)
 
 // clang-format off
 ZMK_LAYER(qwerty,
