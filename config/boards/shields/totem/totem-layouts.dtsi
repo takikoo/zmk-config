@@ -1,4 +1,4 @@
-#include <dt-bindings/zmk/physical_layouts.h>
+#include <physical_layouts.dtsi>
 
 / {
     totem_layout: totem_layout {
