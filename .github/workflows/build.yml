@@ -13,15 +13,13 @@ jobs:
         with:
           filters: |
             totem:
-              - 'config/totem/**'
-              - 'config/*.h'
-              - 'config/*.dtsi'
+              - 'totem/**'
+              - 'shared/**'
               - 'build-totem.yaml'
               - '.github/workflows/build.yml'
             corneish_zen:
-              - 'config/corneish_zen/**'
-              - 'config/*.h'
-              - 'config/*.dtsi'
+              - 'corneish_zen/**'
+              - 'shared/**'
               - 'build-corneish_zen.yaml'
               - '.github/workflows/build.yml'
 
@@ -31,7 +29,7 @@ jobs:
     uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@main
     with:
       build_matrix_path: "build-totem.yaml"
-      config_path: "config/totem"
+      config_path: "totem"
 
   build-corneish_zen:
     needs: changes
@@ -39,4 +37,4 @@ jobs:
     uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@main
     with:
       build_matrix_path: "build-corneish_zen.yaml"
-      config_path: "config/corneish_zen"
+      config_path: "corneish_zen"

@@ -10,12 +10,12 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/outputs.h>
 
-#include "../../zmk-nodefree-config/helper.h"
-#include "../../zmk-nodefree-config/keypos_def/keypos_42keys.h"
-#include "../swedish.h"
+#include "../zmk-nodefree-config/helper.h"
+#include "../zmk-nodefree-config/keypos_def/keypos_42keys.h"
+#include "../shared/swedish.h"
 #include "homerow_mods.h"
 #include "corneish_zen.h"
-#include "../macros.dtsi"
+#include "../shared/macros.dtsi"
 #include "combos.dtsi"
 
 #define QUICK_TAP_MS 175
