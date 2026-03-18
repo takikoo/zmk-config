@@ -26,10 +26,6 @@
 #define SNIP_WIN    &kp LG(LS(S))       // Snipping Tool (Windows)
 #define TASK_MAC    &kp LG(LA(ESC))     // Force Quit (macOS)
 #define TASK_WIN    &kp LC(LS(ESC))     // Task Manager (Windows)
-#define MUTE_MAC    &kp LG(LS(M))       // Mute Mic (macOS)
-#define MUTE_WIN    &kp LC(LS(M))       // Mute Mic (Windows)
-#define CAM_MAC     &kp LG(LS(O))       // Toggle Camera (macOS)
-#define CAM_WIN     &kp LC(LS(O))       // Toggle Camera (Windows)
 #define MEH         LC(LS(LALT))        // Left Alt + Ctrl
 #define TAB_PREV    &kp LC(PG_UP)       // Previous tab
 #define TAB_NEXT    &kp LC(PG_DN)       // Next tab
