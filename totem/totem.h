@@ -21,8 +21,8 @@
 #define XXX         &none
 #define ___         &trans
 #define MEH         LC(LS(LALT))        // Left Alt + Ctrl
-#define TAB_PREV    &m_tab_prev         // Previous tab
-#define TAB_NEXT    &m_tab_next         // Next tab
+#define TAB_PREV    &kp LC(PG_UP)       // Previous tab
+#define TAB_NEXT    &kp LC(PG_DN)       // Next tab
 #define CLeft       &kp LC(LEFT)        // CTRL + Left arrow
 #define CRight      &kp LC(RIGHT)       // CTRL + Right arrow
 #define NEXT        &kp LC(K)           // Next occurance

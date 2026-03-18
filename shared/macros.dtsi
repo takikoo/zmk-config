@@ -19,5 +19,3 @@ MACRO(vill, &kp LC(A) &kp LS(Q))
 /* Window */
 MACRO(back, &macro_press &kp LALT &macro_tap &kp LEFT &macro_release &kp LALT)
 MACRO(forward, &macro_press &kp LALT &macro_tap &kp RIGHT &macro_release &kp LALT)
-MACRO(tab_prev, &macro_press &kp LCTRL &macro_tap &kp PG_UP &macro_release &kp LCTRL)
-MACRO(tab_next, &macro_press &kp LCTRL &macro_tap &kp PG_DN &macro_release &kp LCTRL)
