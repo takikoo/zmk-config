@@ -6,8 +6,9 @@
 #define RAISE       4                   // Raise layer
 #define NAV         5                   // Navigation layer
 #define NUM         6                   // Numpad layer
-#define FUNC        7                   // Function keys
-#define ADJUST      8                   // Adjust layer
+#define WINDOW      7                   // Window Management
+#define FUNC        8                   // Function keys
+#define ADJUST      9                   // Adjust layer
 
 #define BT_CH_0     &bt BT_SEL 0
 #define BT_CH_1     &bt BT_SEL 1
@@ -36,6 +37,19 @@
 #define SEL_A       &kp LC(A)
 #define CLOSE       &kp LA(F4)          // ALT + F4
 #define CAD         &kp LC(LA(DEL))     // CTRL + ALT + DEL
+
+// WINDOW MANAGEMENT
+#define W_TL        &m_win_tl           // Top Left
+#define W_T         &m_win_t            // Top
+#define W_TR        &m_win_tr           // Top Right
+#define W_L         &m_win_l            // Left Half
+#define W_MAX       &m_win_max          // Maximize
+#define W_R         &m_win_r            // Right Half
+#define W_BL        &m_win_bl           // Bottom Left
+#define W_B         &m_win_b            // Bottom
+#define W_BR        &m_win_br           // Bottom Right
+#define W_NXT_MON   &m_win_nxt_mon      // Next Monitor
+#define W_PRV_MON   &m_win_prv_mon      // Prev Monitor
 
 #define TONAV       &to NAV
 #define TOBASE      &to BASE
