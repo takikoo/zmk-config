@@ -16,6 +16,21 @@ MACRO(td, &kp T &kp D &kp SE_LBRC &kp SE_RBRC &kp LEFT)
 /* Game */
 MACRO(vill, &kp LC(A) &kp LS(Q))
 
-/* Window */
+/* Window Management (Rectangle/PowerToys) */
+// Rectangle Mac shortcuts: Cmd+Alt+<arrow/key>
+// Windows shortcuts: Win+<arrow>, Win+Shift+<arrow>
+MACRO(win_tl, &kp LG(LA(U)) &kp LG(UP))
+MACRO(win_t, &kp LG(LA(UP)) &kp LG(UP)) // Just Maximize for top on Win
+MACRO(win_tr, &kp LG(LA(I)) &kp LG(UP))
+MACRO(win_l, &kp LG(LA(LEFT)) &kp LG(LEFT))
+MACRO(win_max, &kp LG(LA(ENTER)) &kp LG(UP))
+MACRO(win_r, &kp LG(LA(RIGHT)) &kp LG(RIGHT))
+MACRO(win_bl, &kp LG(LA(J)) &kp LG(DOWN))
+MACRO(win_b, &kp LG(LA(DOWN)) &kp LG(DOWN))
+MACRO(win_br, &kp LG(LA(K)) &kp LG(DOWN))
+MACRO(win_nxt_mon, &kp LC(LA(LG(RIGHT))) &kp LG(LS(RIGHT)))
+MACRO(win_prv_mon, &kp LC(LA(LG(LEFT))) &kp LG(LS(LEFT)))
+
+/* Window Navigation */
 MACRO(back, &macro_press &kp LALT &macro_tap &kp LEFT &macro_release &kp LALT)
 MACRO(forward, &macro_press &kp LALT &macro_tap &kp RIGHT &macro_release &kp LALT)
