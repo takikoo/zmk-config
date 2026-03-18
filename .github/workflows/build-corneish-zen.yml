@@ -1,0 +1,45 @@
+name: Build Corneish Zen
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  changes:
+    runs-on: ubuntu-latest
+    outputs:
+      run: ${{ steps.filter.outputs.run }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dorny/paths-filter@v3
+        id: filter
+        with:
+          filters: |
+            run:
+              - 'corneish_zen/**'
+              - 'shared/**'
+              - 'build-corneish_zen.yaml'
+              - '.github/workflows/build-corneish-zen.yml'
+
+  vars:
+    needs: [changes]
+    if: needs.changes.outputs.run == 'true' || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    outputs:
+      sha_short: ${{ steps.vars.outputs.sha_short }}
+    steps:
+      - uses: actions/checkout@v4
+      - id: vars
+        run: echo "sha_short=$(git rev-parse --short HEAD)" >> $GITHUB_OUTPUT
+
+  build:
+    needs: [changes, vars]
+    if: needs.changes.outputs.run == 'true' || github.event_name == 'workflow_dispatch'
+    uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@main
+    with:
+      build_matrix_path: "build-corneish_zen.yaml"
+      config_path: "corneish_zen"
+      archive_name: "firmware_corneish_zen_${{ needs.vars.outputs.sha_short }}"
