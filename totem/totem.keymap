@@ -144,7 +144,7 @@ ZMK_LAYER(nav,
 
 ZMK_LAYER(num,
 //             ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓   ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓
-                XXX         TAB_PREV    &m_back     TAB_NEXT    &m_td           &kp KP_DIVIDE &kp N7    &kp N8      &kp N9      &kp KP_MULTIPLY
+                XXX         TAB_PREV    &m_back     TAB_NEXT    &sl FUNC        &kp KP_DIVIDE &kp N7    &kp N8      &kp N9      &kp KP_MULTIPLY
 //             ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫
                 XXX         KUT         YANK        PASTE       NEXT            &kp BSPC    &kp N4      &kp N5      &kp N6      &kp KP_MINUS
 // ┏━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┓
@@ -170,11 +170,11 @@ ZMK_LAYER(func,
 
 ZMK_LAYER(adj,
 //             ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓   ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓
-                &sys_reset  &bootloader &to BASE    &to CLMDH   &to GAME        &studio_unlock &kp F7      &kp F8      &kp F9      &kp F12
+                &sys_reset  &bootloader &to BASE    &to CLMDH   &to GAME        &studio_unlock LOCK_MAC    SNIP_MAC    TASK_MAC    LOCK_WIN
 //             ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫
-                BT_CH_3     BT_CH_2     BT_CH_1     BT_CH_0     &soft_off       XXX         &kp F4      &kp F5      &kp F6      &kp F11
+                BT_CH_3     BT_CH_2     BT_CH_1     BT_CH_0     &soft_off       &kp C_MUTE  &kp C_BRI_DN &kp C_BRI_UP &kp C_PREV  &kp C_NEXT
 // ┏━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┓
-    &bt BT_CLR  GO_USB      GO_BLE      XXX         BT_CH_4     XXX             XXX         &kp F1      &kp F2      &kp F3      &kp F10     XXX
+    &bt BT_CLR  GO_USB      GO_BLE      XXX         BT_CH_4     XXX             XXX         &kp C_VOL_DN &kp C_VOL_UP &kp C_PP   SNIP_WIN    TASK_WIN
 // ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
                                         XXX         XXX         XXX             XXX         XXX         XXX
 //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛

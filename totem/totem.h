@@ -20,6 +20,12 @@
 // CUSTOM KEY CODES
 #define XXX         &none
 #define ___         &trans
+#define LOCK_MAC    &kp LG(LC(Q))       // Lock Screen (macOS)
+#define LOCK_WIN    &kp LG(L)           // Lock Screen (Windows)
+#define SNIP_MAC    &kp LG(LS(N4))      // Area Screenshot (macOS)
+#define SNIP_WIN    &kp LG(LS(S))       // Snipping Tool (Windows)
+#define TASK_MAC    &kp LG(LA(ESC))     // Force Quit (macOS)
+#define TASK_WIN    &kp LC(LS(ESC))     // Task Manager (Windows)
 #define MEH         LC(LS(LALT))        // Left Alt + Ctrl
 #define TAB_PREV    &kp LC(PG_UP)       // Previous tab
 #define TAB_NEXT    &kp LC(PG_DN)       // Next tab

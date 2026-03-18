@@ -10,9 +10,6 @@ MACRO(circ, &kp SE_CIRC &kp SPACE)
 MACRO(tild, &kp SE_TILD &kp SPACE)
 MACRO(grv, &kp SE_GRV &kp SPACE)
 
-/* Ture */
-MACRO(td, &kp T &kp D &kp SE_LBRC &kp SE_RBRC &kp LEFT)
-
 /* Game */
 MACRO(vill, &kp LC(A) &kp LS(Q))
 
